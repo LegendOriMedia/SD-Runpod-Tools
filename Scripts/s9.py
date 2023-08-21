@@ -25,6 +25,7 @@ for i, line in enumerate(lines):
         break
     if 'prevent_thread_lock=True,' in line:
         lines.insert(i+1, 'favicon_path="favicon.ico",\n')
+        found = True
         break
 
 if not found:
