@@ -9,7 +9,7 @@ args = parser.parse_args()
 sd_path = args.sd_path
 
 # Save remote file
-url = 'https://github.com/LegendOriMedia/SD-Runpod-Tools/blob/main/Favicons/s1.ico'
+url = 'https://raw.githubusercontent.com/LegendOriMedia/SD-Runpod-Tools/main/Favicons/s1.ico'
 response = requests.get(url)
 with open(os.path.join(sd_path, 'favicon.ico'), 'wb') as f:
     f.write(response.content)
