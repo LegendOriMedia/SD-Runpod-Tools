@@ -15,19 +15,20 @@ with open(os.path.join(sd_path, 'favicon.ico'), 'wb') as f:
     f.write(response.content)
 
 # Modify webui.py
-with open(os.path.join(sd_path, 'webui.py'), 'r') as f:
+webui_path = os.path.join(sd_path, 'webui.py')
+with open(webui_path, 'r') as f:
     lines = f.readlines()
 
 found = False
 for i, line in enumerate(lines):
-    if 'favicon_path="favicon.ico",' in line:
-        found = True
-        break
     if 'prevent_thread_lock=True,' in line:
-        lines.insert(i+1, 'favicon_path="favicon.ico",\n')
-        found = True
-        break
+        # Check if the next line contains the desired favicon_path
+        if i+1 < len(lines) and 'favicon_path="favicon.ico",' in lines[i+1]:
+            found = True
+            break
+        else:
+            lines.insert(i+1, '            favicon_path="favicon.ico",\n')  # Adjust the indentation level according to your webui.py file
 
 if not found:
-    with open(os.path.join(sd_path, 'webui.py'), 'w') as f:
+    with open(webui_path, 'w') as f:
         f.writelines(lines)
