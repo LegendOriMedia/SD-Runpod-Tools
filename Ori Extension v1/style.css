@@ -1,0 +1,8 @@
+@keyframes flash {
+    from { background-color: #e0f7fa; }
+    to { background-color: #0cff00; }
+}
+
+.flash {
+    animation: flash 0.2s 4;
+}

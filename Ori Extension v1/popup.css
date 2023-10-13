@@ -1,0 +1,139 @@
+body {
+    width: 400px;
+    padding: 10px;
+	height:310px;
+}
+
+button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button:disabled {
+    background-color: #ddd;
+    color: #aaa;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+ 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+  padding: 0; 
+    border: 1px solid #888;
+    width: 80%;
+
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.command-button {
+    background-color: #e0f7fa;  /* Light blue background */
+    color: #00796b;  /* Dark teal text */
+    border: 1px solid #00796b;  /* Dark teal border */
+    margin-right: 5px;  /* Some margin to the right */
+    cursor: pointer;  /* Cursor style */
+}
+
+.command-button:hover {
+    background-color: #b2ebf2;  /* Slightly darker blue on hover */
+}
+
+.command-button:active {
+    background-color: #80deea;  /* Even darker blue on active/click */
+}
+
+.flash-green {
+    animation: flashGreen 1s 2;
+}
+
+@keyframes flashGreen {
+    0%, 100% {
+        background-color: initial;
+    }
+    50% {
+        background-color: #0cff00;
+    }
+}
+/* Specific styling for the URL input */
+#itemUrl {
+    width: 85%;
+	font-size: smaller;
+}
+
+/* Specific styling for the download link input */
+#downloadLink {
+    width: 80%;
+	font-size: smaller;
+}
+
+/* Initially hide modelFields and commandFields */
+#modelFields,
+#commandFields {
+    display: none;
+	 padding: 5px;
+	background-color:#f2f2f2;
+}
+
+#name { font-size: smaller; width:80%;}
+
+input {
+    margin-top: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #1e1e1e;
+	color: #fff;
+    padding-left: 10px;  /* Add padding here */
+}
+
+.header h2 {
+    margin: 0;
+    padding-right: 30px;
+}
+
+.header label {
+    margin-right: 10px;
+}
+
+.noneheader {padding:10px;}
+
+select {
+    font-size: smaller;
+}
+
+/* Remove margin from the last element inside modelFields */
+#modelFields > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Remove margin from the last element inside commandFields */
+#commandFields > *:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ori's Runpod SD Helper</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div id="codebuttons">
+        <button id="installDefaultExtensionsBtn">One click Defaults</button>
+    </div>
+    <button id="openLibraryBtn">Show/Edit My Library</button>
+    <hr>
+    <button id="addItemBtn">Add Item</button>
+   <div id="addItemModal" class="modal">
+<div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="header">
+            <h2>Add Item</h2>
+            <label for="itemType">Type:</label>
+            <select id="itemType" name="itemType">
+                <option value="Model" selected>Model</option>
+                <option value="Extension">Extension</option>
+                <option value="Command">Command</option>
+            </select>
+        </div>
+		<div class="noneheader">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>		
+				<label for="itemUrl">URL:</label>
+				<input type="text" id="itemUrl" name="itemUrl" required><br><br>
+
+				<!-- Additional fields for Models -->
+				<div id="modelFields">
+					<label for="modelType">Model Type:</label>
+					<select id="modelType" name="modelType">
+						<option value="ControlNet" selected>ControlNet</option>
+						<option value="Checkpoint">Checkpoint</option>
+						<option value="LoRA">LoRA</option>
+						<option value="Embedding">Embedding</option>
+						<option value="LyCORIS">Lycoris</option>
+						<option value="VAE">VAE</option>
+						<option value="Upscaler">Upscaler</option>
+					</select>
+					<label for="version">SD Version:</label>
+					<select id="version" name="version">
+						<option value="SD 1.5">SD 1.5</option>
+						<option value="SDXL 1.0">SDXL 1.0</option>
+					</select><br>
+					<label for="downloadLink">Dl Link:</label>
+					<input type="text" id="downloadLink" name="downloadLink" required>
+			</div>
+				<div id="commandFields">
+					<label for="command">Command:</label><br>
+				<textarea id="command" name="command" rows="3" cols="40"></textarea>   
+					<label for="addButton">Add Button in Popup:</label>
+					<input type="checkbox" id="addButton" name="addButton">
+				</div>
+				<label for="isDefault">Set as Default:</label>
+				<input type="checkbox" id="isDefault" name="isDefault"><br>
+				<label for="notes">Notes:</label><br>
+				<textarea id="notes" name="notes" rows="3" cols="40"></textarea>            
+				<button id="submitItemBtn">Add Item</button>
+			</div>
+		</div>		</div>
+
+
+    <script src="popup.js"></script>
+</body>
+</html>
